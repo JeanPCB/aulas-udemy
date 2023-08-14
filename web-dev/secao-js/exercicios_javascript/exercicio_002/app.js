@@ -8,3 +8,7 @@ Enunciado: CONTADOR COM INTERVALO DE VALORES
     O valor nunca poderá ser inferior a -10 ou superior a 10.
 
 ---------------------------------------------------------------------------- */
+
+import {changeValue} from "./modules/changeValue.js"
+
+changeValue()

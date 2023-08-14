@@ -8,3 +8,5 @@ Enunciado: CONTADOR
     um dos botões, o utilizador irá aumentar ou diminuir o valor em uma unidade.
 
 ---------------------------------------------------------------------------- */
+
+import * as changeValue from "./modules/changeValue.js"
