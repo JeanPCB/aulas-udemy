@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    min-height: 100vh;
+    position: relative;
+}
+
+body {
+    background-color: #ccc;
+}
+
+main {
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: #000;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#logo {
+    position: absolute;
+    left: 9.5%;
+    top: 10px;
+}
+
+#logo img{
+    height: 60px;
+}
+
+.nav-link{
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    color: #bbb;
+}
+
+#title-container h1 {
+    font-size: 3rem;
+}
+
+#posts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    width: 60%;
+}
+
+.post-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.post-box:hover {
+    cursor: pointer;
+}
+
+.post-box:first-child {
+    min-width: 100%;
+}
+
+.post-box img {
+    width: 100%;
+}
+
+.post-title {
+    margin-top: 20px;
+}
+
+.post-categories a {
+    color: #000;
+}
