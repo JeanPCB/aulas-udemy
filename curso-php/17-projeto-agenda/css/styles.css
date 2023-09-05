@@ -1,0 +1,22 @@
+html {
+    position: relative;
+    min-height: 100vh;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar-brand img{
+    width: 50px;
+}
+
+#main-container {
+    max-width: 900px;
+}
+
+#main-table th:last-child {
+    width: 120px;
+}
