@@ -6,13 +6,12 @@
     $data = $_POST;
 
     if(!empty($data)) {
-        $id = $data["id"];
-        $name = $data["name"];
-        $phone = $data["phone"];
-        $observations = $data["observations"];
-
         switch ($data["type"]) {
             case "create":
+                $name = $data["name"];
+                $phone = $data["phone"];
+                $observations = $data["observations"];
+
                 $query = "INSERT INTO contacts (name, phone, observations) VALUES (:name, :phone, :observations)";
 
                 $operation = "criado";
@@ -25,6 +24,11 @@
                 break;
             
             case "edit":
+                $id = $data["id"];
+                $name = $data["name"];
+                $phone = $data["phone"];
+                $observations = $data["observations"];
+
                 $query = "UPDATE contacts SET name = :name, phone = :phone, observations = :observations WHERE id = :id";
             
                 $operation = "atualizado";
@@ -36,6 +40,16 @@
                 $stmt->bindParam("id", $id);
 
                 break;
+
+            case "delete":
+                $id = $data["id"];
+
+                $query = "DELETE FROM contacts WHERE id = :id";
+
+                $operation = "deletado";
+
+                $stmt = $conn->prepare($query);
+                $stmt->bindParam("id", $id);
 
             default:
                 $_SESSION["state"] = "fail";
@@ -53,7 +67,7 @@
             $_SESSION["state"] = "fail";
         }
 
-        header("Location:" . $BASE_URL . "../index.php");  
+        header("Location: ../index.php");  
     } else {
         if(!empty($_GET)) {
             $id = $_GET["id"];

@@ -24,17 +24,21 @@
                         <td class="align-middle"><?= $contact["name"] ?></td>
                         <td class="align-middle"><?= $contact["phone"] ?></td>
                         <td class="align-middle">
-                            <a href="<?= $BASE_URL ?>/show.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
+                            <a href="show.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
                                 <i class="fa-regular fa-eye btn p-0 ps-1 pe-1 text-primary"></i>
                             </a>
-                            <a href="<?= $BASE_URL ?>/edit.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
+                            <a href="edit.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
                                 <i class="fa-regular fa-pen-to-square btn p-0 ps-1 pe-1"></i>
                             </a>
-                            <button type="submit" class="btn p-0 ps-1 pe-1">
-                                <a href="#" class="text-decoration-none">
-                                    <i class="fa-solid fa-trash text-danger"></i>
-                                </a>
-                            </button>
+                            <form action="config/process.php" method="POST" class="d-inline-block">
+                                <input type="hidden" name="type" value="delete">
+                                <input type="hidden" name="id" value="<?= $contact["id"]?>">
+                                <button type="submit" class="btn p-0 ps-1 pe-1">
+                                    <a href="delete.php" class="text-decoration-none">
+                                        <i class="fa-solid fa-trash text-danger"></i>
+                                    </a>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -45,6 +49,4 @@
         <?php endif ?>
     </div>
 
-<!-- <?php 
-    include_once "templates/footer.php";
-?> -->
+<?php include_once "templates/footer.php" ?>

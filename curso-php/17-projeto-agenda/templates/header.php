@@ -1,5 +1,4 @@
 <?php
-    include_once "config/url.php";
     include_once "config/process.php";
 ?>
 
@@ -32,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <a class="nav-link text-light" href="./create.php">Adicionar</a>
+                            <a class="nav-link text-light" href="create.php">Adicionar</a>
                         </li>
                     </ul>
                 </div>

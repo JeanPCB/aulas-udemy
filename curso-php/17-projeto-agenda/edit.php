@@ -6,7 +6,7 @@
     <?php include_once "templates/back_btn.php" ?>
     <h1 class="mb-3">Editar Contato</h1>
 
-    <form action="<?= $BASE_URL?>/config/process.php" method="POST">
+    <form action="config/process.php" method="POST">
         <input type="hidden" name="type" value="edit">
         <input type="hidden" name="id" value="<?= $contact["id"] ?>">
         <div class="form-group mb-3">
