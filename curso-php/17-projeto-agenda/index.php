@@ -1,17 +1,17 @@
 <?php
-    include_once "./templates/header.php";
+    include_once "templates/header.php";
 ?>
     <div id="main-container" class="container container-fluid">
         <h1 class="text-center m-3" id="main-title">Meus Contatos</h1>
 
         <?php if(count($contacts) > 0): ?>
-            <table class="table" id="main-table">
+            <table class="table table-light table-striped" id="main-table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col"></th>
+                    <th scope="col" class="bg-primary text-light">#</th>
+                    <th scope="col" class="bg-primary text-light">Nome</th>
+                    <th scope="col" class="bg-primary text-light">Telefone</th>
+                    <th scope="col" class="bg-primary text-light"></th>
                 </tr>
             </thead>
             <tbody>
@@ -21,10 +21,16 @@
                         <td class="align-middle"><?= $contact["name"] ?></td>
                         <td class="align-middle"><?= $contact["phone"] ?></td>
                         <td class="align-middle">
-                            <i class="fa-regular fa-eye btn p-0 ps-1 pe-1"></i>
-                            <i class="fa-regular fa-pen-to-square btn p-0 ps-1 pe-1"></i>
+                            <a href="<?= $BASE_URL ?>/show.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
+                                <i class="fa-regular fa-eye btn p-0 ps-1 pe-1 text-primary"></i>
+                            </a>
+                            <a href="#" class="text-decoration-none">
+                                <i class="fa-regular fa-pen-to-square btn p-0 ps-1 pe-1"></i>
+                            </a>
                             <button type="submit" class="btn p-0 ps-1 pe-1">
-                                <i class="fa-solid fa-trash"></i>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="fa-solid fa-trash text-danger"></i>
+                                </a>
                             </button>
                         </td>
                     </tr>
@@ -37,5 +43,5 @@
     </div>
 
 <?php 
-    include_once "./templates/footer.php";
+    include_once "templates/footer.php";
 ?>
