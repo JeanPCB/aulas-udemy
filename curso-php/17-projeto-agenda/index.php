@@ -1,7 +1,10 @@
 <?php
     include_once "templates/header.php";
-?>
+?>  
+
     <div id="main-container" class="container container-fluid">
+        <?php include_once "templates/flash_msg.php" ?>
+
         <h1 class="text-center m-3" id="main-title">Meus Contatos</h1>
 
         <?php if(count($contacts) > 0): ?>
@@ -24,7 +27,7 @@
                             <a href="<?= $BASE_URL ?>/show.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
                                 <i class="fa-regular fa-eye btn p-0 ps-1 pe-1 text-primary"></i>
                             </a>
-                            <a href="#" class="text-decoration-none">
+                            <a href="<?= $BASE_URL ?>/edit.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
                                 <i class="fa-regular fa-pen-to-square btn p-0 ps-1 pe-1"></i>
                             </a>
                             <button type="submit" class="btn p-0 ps-1 pe-1">
@@ -42,6 +45,6 @@
         <?php endif ?>
     </div>
 
-<?php 
+<!-- <?php 
     include_once "templates/footer.php";
-?>
+?> -->

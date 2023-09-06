@@ -1,11 +1,6 @@
 <?php
     include_once "config/url.php";
     include_once "config/process.php";
-
-    if(isset($_SESSION['msg'])) {
-        $printMsg = $_SESSION['msg'];
-        $_SESSION['msg'] = '';
-    }
 ?>
 
 <!DOCTYPE html>
@@ -38,9 +33,6 @@
                     <ul class="navbar-nav">
                         <li class="nav-item ">
                             <a class="nav-link text-light" href="./create.php">Adicionar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="./index.php">Voltar</a>
                         </li>
                     </ul>
                 </div>

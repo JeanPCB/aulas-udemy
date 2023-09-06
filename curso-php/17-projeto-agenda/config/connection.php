@@ -9,4 +9,5 @@
     } catch(PDOException $e) {
         $error = $e->getMessage();
         echo "Erro: $error";
+        exit;
     }
