@@ -30,11 +30,31 @@
                             <a href="<?= $BASE_URL ?>/edit.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
                                 <i class="fa-regular fa-pen-to-square btn p-0 ps-1 pe-1"></i>
                             </a>
-                            <button type="submit" class="btn p-0 ps-1 pe-1">
-                                <a href="#" class="text-decoration-none">
-                                    <i class="fa-solid fa-trash text-danger"></i>
-                                </a>
-                            </button>
+                            <form action="config/process.php" method="POST" class="d-inline-block">
+                                <input type="hidden" name="type" value="delete">
+                                <input type="hidden" name="id" value="<?= $contact["id"]?>">
+                                <button type="button" class="btn p-0 ps-1 pe-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <a href="#" class="text-decoration-none">
+                                        <i class="fa-solid fa-trash text-danger"></i>
+                                    </a>
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja deletar o contato?</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-danger">Deletar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -45,6 +65,6 @@
         <?php endif ?>
     </div>
 
-<!-- <?php 
-    include_once "templates/footer.php";
-?> -->
+<?php
+    include_once "templates/footer.php"
+?>

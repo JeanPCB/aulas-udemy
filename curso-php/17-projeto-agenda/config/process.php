@@ -6,10 +6,14 @@
     $data = $_POST;
 
     if(!empty($data)) {
-        $id = $data["id"];
-        $name = $data["name"];
-        $phone = $data["phone"];
-        $observations = $data["observations"];
+        if($data["type"] === "delete") {
+            $id = $data["id"];
+        } else {
+            $id = $data["id"];
+            $name = $data["name"];
+            $phone = $data["phone"];
+            $observations = $data["observations"];
+        }
 
         switch ($data["type"]) {
             case "create":
@@ -33,6 +37,16 @@
                 $stmt->bindParam("name", $name);
                 $stmt->bindParam("phone", $phone);
                 $stmt->bindParam("observations", $observations);
+                $stmt->bindParam("id", $id);
+
+                break;
+            
+            case "delete":
+                $query = "DELETE FROM contacts WHERE id = :id";
+
+                $operation = "deletado";
+
+                $stmt = $conn->prepare($query);
                 $stmt->bindParam("id", $id);
 
                 break;
