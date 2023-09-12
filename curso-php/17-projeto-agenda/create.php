@@ -8,7 +8,7 @@
 
     <form action="<?= $BASE_URL?>/config/process.php" method="POST">
         <input type="hidden" name="type" value="create">
-        <!-- <input type="hidden" name="id" value="<?= $contact["id"] ?>"> -->
+        <input type="hidden" name="id" value="<?= $contact["id"] ?>">
         <div class="form-group mb-3">
             <label for="name" class="mb-1">Nome:</label>
             <input type="text" class="form-control" id="name" name="name" required>

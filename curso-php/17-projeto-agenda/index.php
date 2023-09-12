@@ -24,10 +24,10 @@
                         <td class="align-middle"><?= $contact["name"] ?></td>
                         <td class="align-middle"><?= $contact["phone"] ?></td>
                         <td class="align-middle">
-                            <a href="<?= $BASE_URL ?>/show.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
+                            <a href="show.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
                                 <i class="fa-regular fa-eye btn p-0 ps-1 pe-1 text-primary"></i>
                             </a>
-                            <a href="<?= $BASE_URL ?>/edit.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
+                            <a href="edit.php?id=<?= $contact["id"] ?>" class="text-decoration-none">
                                 <i class="fa-regular fa-pen-to-square btn p-0 ps-1 pe-1"></i>
                             </a>
                             <form action="config/process.php" method="POST" class="d-inline-block">
@@ -39,7 +39,6 @@
                                     </a>
                                 </button>
 
-                                <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
