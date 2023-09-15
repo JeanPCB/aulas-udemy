@@ -1,0 +1,76 @@
+:root {
+    /* Color Pallete */
+    --clr-primary: #96B6C5;
+    --clr-secondary: #ADC4CE;
+    --clr-tertiary: #EEE0C9;
+    --clr-quaternary: #F1F0E8;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: var(--clr-secondary);
+    padding: 10px 15px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer div {
+    justify-content: center;
+}
+
+/* Custom classes */
+.hoverable-link:hover{
+    color: var(--clr-quaternary);
+}
+
+/* Navbar */
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar-brand {
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    max-width: 140px;
+    padding: 0;
+}
+
+.navbar-brand span {
+    position: relative;
+    bottom: 5px;
+}
+
+#brand-search-container {
+    max-height: 40px;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+#brand-search-container input {
+    box-shadow: none;
+}
+
+#brand-search-container button {
+    padding: 10px 5px;
+}
+
+/* Main */
+
+#main-container {
+    background-color: var(--clr-quaternary);
+}
