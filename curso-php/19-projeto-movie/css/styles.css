@@ -1,9 +1,8 @@
 :root {
     /* Color Pallete */
-    --clr-primary: #96B6C5;
-    --clr-secondary: #ADC4CE;
-    --clr-tertiary: #EEE0C9;
-    --clr-quaternary: #F1F0E8;    
+    --clr-primary: #21053b;
+    --clr-secondary: #7858A6;
+    --clr-tertiary: #5B4B8A;    
 }
 
 * {
@@ -12,29 +11,25 @@
     box-sizing: border-box;
 }
 
+body {
+    color: #fff;
+    width: 100%;
+    background-color: var(--clr-primary);
+}
+
 header, footer {
-    background-color: var(--clr-secondary);
+    background-color: var(--clr-tertiary);
     padding: 10px 15px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    text-decoration: none;
-    color: inherit;
-}
-
-footer div {
-    justify-content: center;
-}
-
 /* Custom classes */
-.hoverable-link:hover{
-    color: var(--clr-quaternary);
+.hoverable-link {
+    color: #fff;
+    font-weight: 500;
+}
+
+.hoverable-link:hover {
+    color: #000;
 }
 
 /* Navbar */
@@ -72,5 +67,24 @@ footer div {
 /* Main */
 
 #main-container {
-    background-color: var(--clr-quaternary);
+    padding-top: 2.5rem;
+    padding-bottom: 8rem;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer div {
+    justify-content: center;
+    gap: 5rem;
+    max-height: 40px;
 }
