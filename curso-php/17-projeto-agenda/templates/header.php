@@ -14,6 +14,7 @@
     <!-- MY CSS -->
     <link rel="stylesheet" href="./css/styles.css">
 
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
     <title>Agenda Online</title>
 </head>
 <body>
