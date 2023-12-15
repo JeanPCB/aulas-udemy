@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.butaozin {
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(48, 48, 212);
+}
+
+.butaozin:hover {
+    background-color: rgb(36, 36, 160);
+}
+
+.butaozin:active {
+    background-color: rgb(219, 219, 136);
+    color: #000;
+}
