@@ -1,0 +1,51 @@
+body {
+    min-height: 100vh;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+i {
+    border: none !important;    
+}
+
+button {
+    border: none !important;
+}
+
+a:hover {
+    color: inherit;
+}
+
+.navbar-brand img{
+    width: 50px;
+}
+
+#main-container {
+    max-width: 900px;
+}
+
+#main-table th:first-child {
+    border-top-left-radius: 5px;
+}
+
+#main-table th:last-child {
+    width: 120px;
+    border-top-right-radius: 5px;
+}
+
+#contact-container {
+    max-width: 500px;
+}
+
+#back-btn {
+    color: rgb(13, 110, 253);
+}
+
+#back-btn:hover {
+    color: #fff;
+    background-color: rgb(13, 110, 253);
+}
