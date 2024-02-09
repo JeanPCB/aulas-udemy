@@ -29,6 +29,10 @@ nav a {
     color: #7cc2ff;
 }
 
+nav a:hover {
+    color: #fff;
+}
+
 footer {
     background-color: #02111f;
     color: #808080;
@@ -74,6 +78,14 @@ footer {
     padding: 50px;
 }
 
+.font-big {
+    font-size: 3em;
+}
+
+.font-medium {
+    font-size: 1.1em;
+}
+
 .main-article {
     width: 50%;
     margin: 60px auto;
@@ -96,19 +108,19 @@ footer {
     font-weight: 600;
 }
 
-.services-container {
+.services-contact-container {
     background-color: #082946;
     padding: 80px;
     padding-bottom: 50px;
 }
 
-.services-container p{
+.services-contact-container p{
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
 }
 
-.services-container a {
+.services-contact-container a {
     display: block;
     color: #fff;
     background-color: #008eb9;
@@ -118,7 +130,26 @@ footer {
     font-size: 1.2rem;
 }
 
-.services-container a:hover {
+.services-contact-container a:hover {
     background-color: #fff;
     color: #000;
+}
+
+.services-container {
+    width: 40%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.services-container h3 {
+    font-size: 1.3em;
+    color: #2097ff;
+    padding: 30px 0;
+    text-align: left;
+}
+
+.services-container li {
+    margin-left: 40px;
+    margin-bottom: 10px;
+    text-align: left;
 }
