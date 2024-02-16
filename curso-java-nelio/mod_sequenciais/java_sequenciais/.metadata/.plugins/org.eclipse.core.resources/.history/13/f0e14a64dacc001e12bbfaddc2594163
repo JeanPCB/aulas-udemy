@@ -1,0 +1,20 @@
+package func_matematicas;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		double a;
+		
+		System.out.println("Calculadora:");
+		System.out.println("Digite um número:");
+		a = sc.nextDouble();
+		sc.nextLine();
+		
+		System.out.printf("Raiz quadrada de %.2f :", a);
+		System.out.printf("Raiz cúbica de %.2f :", Math.pow(a, 3));
+	}
+}

@@ -1,0 +1,25 @@
+package func_matematicas;
+
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Main {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		double num, sqrtA;
+		
+		System.out.println("Calculadora:");
+		System.out.println("Digite um número:");
+		num = sc.nextDouble();
+		sc.nextLine();
+		
+		sqrtA = Math.sqrt(num);
+		
+		System.out.printf("A raiz quadrada de %.2f é %.2f%n", num, sqrtA);
+		System.out.printf("A raiz cúbica é %.2f", Math.pow(num, 3));
+		
+		sc.close();
+	}
+}

@@ -1,0 +1,22 @@
+package func_matematicas;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		double a;
+		
+		System.out.println("Calculadora:");
+		System.out.println("Digite um número:");
+		a = sc.nextDouble();
+		sc.nextLine();
+		
+		System.out.printf("A raiz quadrada de %f é", a);
+		System.out.printf("A raiz cúbica de %f é", Math.pow(a, 3));
+		
+		sc.close();
+	}
+}
