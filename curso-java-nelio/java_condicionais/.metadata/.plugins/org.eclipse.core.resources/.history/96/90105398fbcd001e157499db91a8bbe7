@@ -1,0 +1,23 @@
+package exc_07;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		double x, y;
+		String result;
+		
+		System.out.println("Digite dois valores:");
+		x = sc.nextDouble();
+		sc.nextLine();
+		y = sc.nextDouble();
+		
+		if(x > 0)
+	}
+
+}

@@ -1,0 +1,26 @@
+package exc_01;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		String result;
+		
+		System.out.println("Digite um número:");
+		num = sc.nextInt();
+		sc.nextLine();
+		sc.close();
+		
+		(num < 0) ? result = "negativo" : result = "positivo";
+		
+		if(num < 0) {
+			System.out.println("Este número é negativo");
+		} else {
+			System.out.println("Este número é positivo");
+		}
+	}
+
+}

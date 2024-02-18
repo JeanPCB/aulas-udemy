@@ -1,0 +1,28 @@
+package exc_05;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int itemCode, itemQnt;
+		double price;
+		
+		System.out.println("Digite o código e a quantidade do item:");
+		itemCode = sc.nextInt();
+		sc.nextLine();
+		itemQnt = sc.nextInt();
+		sc.close();
+		
+		switch(itemCode) {
+			case 1:
+				price = 4.00;
+				break;
+			case 2:
+				price = 4.50;
+				
+		}
+	}
+
+}
