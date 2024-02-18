@@ -29,10 +29,13 @@ nav a {
     color: #7cc2ff;
 }
 
+<<<<<<< HEAD
 nav a:hover {
     color: #fff;
 }
 
+=======
+>>>>>>> 0ef29f53c833fc7cf9d65217eac40bbf31db7633
 footer {
     background-color: #02111f;
     color: #808080;
@@ -78,6 +81,7 @@ footer {
     padding: 50px;
 }
 
+<<<<<<< HEAD
 .font-big {
     font-size: 3em;
 }
@@ -86,6 +90,8 @@ footer {
     font-size: 1.1em;
 }
 
+=======
+>>>>>>> 0ef29f53c833fc7cf9d65217eac40bbf31db7633
 .main-article {
     width: 50%;
     margin: 60px auto;
@@ -108,19 +114,31 @@ footer {
     font-weight: 600;
 }
 
+<<<<<<< HEAD
 .services-contact-container {
+=======
+.services-container {
+>>>>>>> 0ef29f53c833fc7cf9d65217eac40bbf31db7633
     background-color: #082946;
     padding: 80px;
     padding-bottom: 50px;
 }
 
+<<<<<<< HEAD
 .services-contact-container p{
+=======
+.services-container p{
+>>>>>>> 0ef29f53c833fc7cf9d65217eac40bbf31db7633
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .services-contact-container a {
+=======
+.services-container a {
+>>>>>>> 0ef29f53c833fc7cf9d65217eac40bbf31db7633
     display: block;
     color: #fff;
     background-color: #008eb9;
@@ -130,6 +148,7 @@ footer {
     font-size: 1.2rem;
 }
 
+<<<<<<< HEAD
 .services-contact-container a:hover {
     background-color: #fff;
     color: #000;
@@ -152,4 +171,9 @@ footer {
     margin-left: 40px;
     margin-bottom: 10px;
     text-align: left;
+=======
+.services-container a:hover {
+    background-color: #fff;
+    color: #000;
+>>>>>>> 0ef29f53c833fc7cf9d65217eac40bbf31db7633
 }

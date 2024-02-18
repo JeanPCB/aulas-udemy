@@ -1,0 +1,26 @@
+package entrada_dados_2;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// Clean nextline() buffer
+		int x;
+		char a;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite um número:");
+		x = sc.nextInt();
+		System.out.println("Digite uma letra:");
+		a = sc.nextChar();
+		
+		System.out.println("Dados digitados:");
+		System.out.println(x);
+		System.out.println(a);
+		
+		sc.close();
+	}
+
+}
