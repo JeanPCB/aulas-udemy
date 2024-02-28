@@ -1,10 +1,6 @@
 # Lessons resources
 /web-dev/html-css-1/recursos
 
-# Metadata Eclipse
-*.metadata
-.org.eclipse*
-
-
-# Metadata IntelliJ
-.idea
+# All hidden files less gitignore
+.*
+!/.gitignore
