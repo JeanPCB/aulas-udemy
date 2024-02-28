@@ -1,6 +1,9 @@
 # Lessons resources
 /web-dev/html-css-1/recursos
 
+# Decompiled files IntelliJ(.class)
+out
+
 # All hidden files less gitignore
 .*
 !/.gitignore
