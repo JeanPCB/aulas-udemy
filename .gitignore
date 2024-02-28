@@ -3,7 +3,7 @@
 
 # Metadata Eclipse
 *.metadata
-^.org.clipse
+^.org.eclipse
 
 # Metadata IntelliJ
 .idea
