@@ -3,11 +3,10 @@ function main() {
     const resultDiv = document.querySelector("#result-div");
     let weightInput = imcForm.querySelector("#weight");
     let heightInput = imcForm.querySelector("#height");
-    let imcResult = null;
 
     imcForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        imcResult = imcCalc(weightInput.value, heightInput.value);
+        let imcResult = imcCalc(weightInput.value, heightInput.value);
         deleteElement(resultDiv);
         appendResult(imcResult, imcRate(imcResult), resultDiv);
         resetInput(weightInput);
@@ -40,7 +39,19 @@ function main() {
     }
 
     function appendResult(imc, rate, element) {
-        element.innerHTML += `<p>Seu IMC é ${imc} (${rate}).</p>`;
+        if(isInputNaN(weightInput) || isInputNaN(heightInput)) {
+            element.innerHTML += "<p class='imc-fail'>O valor do peso ou altura é inválido!</p>"; 
+        } else {
+            element.innerHTML += `<p class='imc-success'>Seu IMC é ${imc} (${rate}).</p>`;
+        }
+    }
+
+    function isInputNaN(input) {
+        if(isNaN(input.value) || input.value === "") {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     function deleteElement(element) {

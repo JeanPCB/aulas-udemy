@@ -102,6 +102,20 @@ input[type=number] {
     gap: 0.5em;
 }
 
+.imc-fail {
+    background-color: #ff5151;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.imc-success {
+    background-color: #2caa4b;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 #imc-form-section h2 {
     margin-bottom: 15px;
 }
