@@ -102,7 +102,7 @@ input[type=number] {
     gap: 0.5em;
 }
 
-.imc-fail {
+.imc-bad {
     background-color: #ff5151;
     color: #fff;
     padding: 10px;

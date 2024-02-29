@@ -1,14 +1,31 @@
 function main() {
     const imcForm = document.querySelector("#imc-form");
     const resultDiv = document.querySelector("#result-div");
-    let weightInput = imcForm.querySelector("#weight");
-    let heightInput = imcForm.querySelector("#height");
 
     imcForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        let imcResult = imcCalc(weightInput.value, heightInput.value);
+
+        const weightInput = imcForm.querySelector("#weight");
+        const heightInput = imcForm.querySelector("#height");
+
+        const weight = Number(weightInput.value);
+        const height = Number(heightInput.value);
+
+        if(!weight) {
+            deleteElement(resultDiv);
+            setResult(false, "Peso inválido!");
+            return;
+        }
+
+        if(!height) {
+            deleteElement(resultDiv);
+            setResult(false, "Altura inválida!");
+            return;
+        }
+
+        const imc = imcCalc(weight, height);
         deleteElement(resultDiv);
-        appendResult(imcResult, imcRate(imcResult), resultDiv);
+        setResult(true, null, imc, imcRate(imc));
         resetInput(weightInput);
         resetInput(heightInput);
     })
@@ -19,39 +36,34 @@ function main() {
     }
 
     function imcRate(imc) {
-        let rate = null;
+        let rate = ["Abaixo do peso", "Peso normal", "Sobrepeso", "Obesidade grau 1", "Obesidade grau 2", "Obesidade grau 3"];
 
-        if(imc < 18.5) {
-            rate = "Abaixo do peso";
-        } else if(imc >= 18.5 && imc < 25) {
-            rate = "Peso normal";
-        } else if(imc >= 25 && imc < 30) {
-            rate = "Sobrepeso";
-        } else if(imc >= 30 && imc < 35) {
-            rate = "Obesidade grau 1";
-        } else if(imc >= 35 && imc < 40) {
-            rate = "Obesidade grau 2";
-        } else {
-            rate = "Obesidade grau 3";
-        }
-
-        return rate;
+        if(imc > 39.9) return rate[5];
+        if(imc > 34.9) return rate[4];
+        if(imc > 29.9) return rate[3];
+        if(imc > 24.9) return rate[2];
+        if(imc >= 18.5) return rate [1];
+        if(imc < 18.5) return rate[0];
     }
 
-    function appendResult(imc, rate, element) {
-        if(isInputNaN(weightInput) || isInputNaN(heightInput)) {
-            element.innerHTML += "<p class='imc-fail'>O valor do peso ou altura é inválido!</p>"; 
-        } else {
-            element.innerHTML += `<p class='imc-success'>Seu IMC é ${imc} (${rate}).</p>`;
-        }
+    function appendElement(fatherId, child) {
+        const childElement = document.createElement(child);
+        const father = document.querySelector(`#${fatherId}`);
+        return father.appendChild(childElement);
     }
 
-    function isInputNaN(input) {
-        if(isNaN(input.value) || input.value === "") {
-            return true;
-        } else {
-            return false;
+    function setResult(isValid, resultText = "Erro!", imc = null, rate = null) {
+        const resultParagraph = appendElement("result-div", "p");
+
+        if(!isValid) {
+            resultParagraph.innerText = resultText; 
+            resultParagraph.classList.add("imc-bad");
+            
+            return;
         }
+
+        resultParagraph.innerText = `Seu IMC é ${imc} (${rate}).`;
+        resultParagraph.classList.add("imc-success");
     }
 
     function deleteElement(element) {
