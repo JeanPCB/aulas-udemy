@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+:root {
+    --primary-color: rgb(29, 29, 29);
+    --primary-color-darker: rgb(15, 15, 15);
+    --primary-color-darkest: rgb(0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Madimi One", sans-serif;
+    background-color: var(--primary-color-darkest);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+button[disabled] {
+    cursor: default !important;
+}
+
+.main-container {
+    background-color: #363636;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    user-select: none;
+    border-radius: 5px;
+}
+
+.title-div {
+    background: var(--primary-color);
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    padding: 10px;
+    color: #eb2222;
+}
+
+.title-div:hover {
+    cursor: move;
+}
+
+.btns-div {
+    text-align: center;
+    background-color: var(--primary-color);
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+}
+
+.disabled-btn {
+    color: #49494938;
+    cursor: default;
+}
+
+.stopped-time {
+    color: #8d8d8d;
+}
+
+#time-display {
+    font-size: 5em;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 0;
+}       
+
+#start-btn, #stop-btn, #reset-btn {
+    cursor: pointer;
+    color: #eb2222;
+    font-size: 1.5em;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border: none;
+}

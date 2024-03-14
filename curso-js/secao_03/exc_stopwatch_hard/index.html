@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Stopwatch</title>
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <div class="title-div">
+                <h1>Stopwatch</h1>
+            </div>
+            <p id="time-display">
+                <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>
+            </p>
+            <div class="btns-div">
+                <button id="stop-btn" class="stop" disabled><i id="stop-icon" class="fa-solid fa-stop disabled-btn"></i></button>
+                <button id="start-btn" class="start"><i id="start-icon" class="fa-solid fa-play"></i></button>
+                <button id="reset-btn" class="reset" disabled><i id="reset-icon" class="fa-solid fa-rotate-left disabled-btn"></i></button>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/draggable.js"></script>
+    <script src="https://kit.fontawesome.com/f0f270f822.js" crossorigin="anonymous"></script>
+</body>
+</html>
