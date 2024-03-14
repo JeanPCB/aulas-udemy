@@ -1,90 +1,72 @@
 function main() {
     // Variables
     const timeDisplay = document.querySelector("#time-display");
-    const hour = document.querySelector("#hour");
-    const minute = document.querySelector("#minute");
-    const second = document.querySelector("#second");
-    const stopBtn = document.querySelector("#stop-btn");
     const startBtn = document.querySelector("#start-btn");
-    const resetBtn = document.querySelector("#reset-btn");
-    const stopIcon = document.querySelector("#stop-icon");
     const startIcon = document.querySelector("#start-icon");
+    const stopBtn = document.querySelector("#stop-btn");
+    const stopIcon = document.querySelector("#stop-icon");
+    const resetBtn = document.querySelector("#reset-btn");
     const resetIcon = document.querySelector("#reset-icon");
-    
-    // Global Counter
-    count = 0;
+
+    let seconds = 0;
+    let runTime = null;
 
     // Invoking
-    startBtn.addEventListener("click", () => {
-        timeDisplay.classList.remove("stopped-time");
-        enableBtn(stopBtn, stopIcon);
-        disableBtn(startBtn, startIcon);
-        disableBtn(resetBtn, resetIcon);
+    document.addEventListener("click", (e) => {
+        const el = e.target;
 
-        const startTime = setInterval(start, 1000);
+        if(el.classList.contains("start")) {
+            start();
+            return;
+        }
 
-        stopBtn.addEventListener("click", () => {
-            timeDisplay.classList.add("stopped-time");
-            clearInterval(startTime);
+        if(el.classList.contains("stop")) {
+            stop();
+            return;
+        }
 
-            enableBtn(startBtn, startIcon);
-            enableBtn(resetBtn, resetIcon);
-            disableBtn(stopBtn, stopIcon);
-        }); 
-
-        resetBtn.addEventListener("click", () => {
-            clearInterval(startTime);
-            timeDisplay.classList.remove("stopped-time");
-            resetTime();
-            disableBtn(resetBtn, resetIcon);
-        });
-    });
+        if(el.classList.contains("reset")) {
+            reset();
+            return;
+        }
+    })
 
     // Functions
     function start() {
-        count++;
-        displayTime();
-        console.log(count);
+        runTime = setInterval(() => {
+            seconds++;
+            timeDisplay.innerHTML = getTimeFromSeconds(seconds);
+            console.log(getTimeFromSeconds(seconds))
+        }, 1);
+
+        timeDisplay.classList.remove("stopped-time");
+        disableBtn(startBtn, startIcon);
+        disableBtn(resetBtn, resetIcon);
+        enableBtn(stopBtn, stopIcon);
+    } 
+    
+    function stop() {
+        clearInterval(runTime);
+        timeDisplay.classList.add("stopped-time");
+        disableBtn(stopBtn, stopIcon);
+        enableBtn(startBtn, startIcon);
+        enableBtn(resetBtn, resetIcon);
     }
 
-    function displayTime() {
-        if(count % 3600 === 0 && count > 0) {
-            cleanTimeUnit(minute);
-            cleanTimeUnit(second);
-            setIncreaseTime(hour);
-        } else if(count % 60 === 0 && count > 0) {
-            cleanTimeUnit(second);
-            setIncreaseTime(minute);
-        } else if(count % 60 !== 0) {
-            setIncreaseTime(second);
-        } else {
-            return;
-        }
+    function reset() {
+        seconds = 0;
+        timeDisplay.innerText = "00:00:00";
+        timeDisplay.classList.remove("stopped-time");
+        disableBtn(resetBtn, resetIcon);
     }
 
-    function cleanTimeUnit(element) {
-        if(Number(element.innerText) >= 59) {
-            element.innerText = "00";
-        }
-    }
-
-    function setIncreaseTime(element) {
-        if(Number(element.innerText) < 9) {
-            addLeftZero(element, Number(element.innerText) + 1);
-        } else {
-            element.innerText = Number(element.innerText) + 1;
-        }
-    }
-
-    function resetTime() {
-        hour.innerText = "00";
-        minute.innerText = "00";
-        second.innerText = "00";
-        count = 0;
-    }
-
-    function addLeftZero(element, value) {
-        element.innerText = `0${value}`;
+    function getTimeFromSeconds(seconds) {
+        const time = new Date(seconds * 1000);
+        
+        return time.toLocaleTimeString("pt-BR", {
+            hour12: false,
+            timeZone: "GMT"
+        });
     }
 
     function disableBtn(btn, icon) {
