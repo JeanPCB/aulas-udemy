@@ -14,14 +14,36 @@ public class Main {
             @Override
             public void run() {
                 second++;
-                System.out.println(second);
+
+                if(isUnitFull(second)) {
+                    increaseSec();
+                }
+
+                if(isUnitFull(minute)) {
+                    increaseMin();
+                }
+
+                System.out.printf("%d : %d : %d%n", hour, minute, second);
+            }
+
+            public boolean isUnitFull(int timeUnit) {
+                return timeUnit > 59;
+            }
+
+            public void increaseSec() {
+                second = 0;
+                minute++;
+            }
+
+            public void increaseMin() {
+                minute = 0;
+                hour++;
             }
         };
 
         Timer timer = new Timer();
         long delay = 1000;
         long intervalPeriod = 1000;
-
         timer.scheduleAtFixedRate(startCount, delay, intervalPeriod);
     }
 }
