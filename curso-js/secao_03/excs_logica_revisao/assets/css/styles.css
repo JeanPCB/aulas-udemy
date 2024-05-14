@@ -31,7 +31,7 @@ h2 {
     gap: 1rem;
 }
 
-.exc-container label{
+.exc-container label, .exc-container p{
     font-size: 20px;
 }
 
@@ -39,6 +39,11 @@ h2 {
     font-size: 15px;
     margin-left: 5px;
     outline: none;
+}
+
+.exc-container #result {
+    font-size: 2rem;
+    color: #00ff15;
 }
 
 .exc-container > [type="submit"] {
