@@ -1,15 +1,16 @@
 function main() {
-    const date = new Date("01-01-1970 01:40:05");
+    const date = new Date("01-01-1970 00:01:02");
 
     function getHour(date) {
         try {
             return date.toLocaleTimeString("pt-BR", {
-                hour12: false,
                 hour: "2-digit",
                 minute: "2-digit",
-                second: "2-digit"
-            });
-        } catch(e) {
+                second: "2-digit",
+                hour12: false
+            })
+
+        } catch(err) {
             if(date && !(date instanceof Date)) {
                 throw new TypeError("waiting for a Date instance");
             }
@@ -22,20 +23,20 @@ function main() {
             console.log(`Entry date: ${date}\n`);
         }
     }
-    
+
     try {
-        // console.log(getHour("03-03-1933 03:30:33"));
-         console.log(getHour("sdad"));
-        // console.log(getHour(null));
+        // console.log(getHour("testing"));
+        console.log(getHour(null));
         console.log(getHour(date));
     } catch(err) {
         if(err instanceof TypeError) {
-            console.log("invalid type of date");
+            console.log("Invalid value in date input");
         }
-        
-        console.log("Invalid date: null or undefined");
+
+        if(err instanceof ReferenceError) {
+            console.log("Date input can't be null");
+        }
     } finally {
-        console.log("\nend of execution");
+        console.log("\nend");
     }
-}
-main();
+} main();
