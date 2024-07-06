@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dfee0d5d;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    font-family: "Playwrite GB S", cursive;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 1.4rem;
+    width: 30%;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-left: 40px;
+}
+
+ul {
+    font-size: 1.2rem;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+li {
+    max-width: 80%;
+}
+
+.task-input {
+    margin-left: 20px;
+    width: 70%;
+    font-size: 1.2rem;
+    padding: 5px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px #000 solid;
+}
+
+.add-btn {
+    text-align: center;
+    margin: 0 10px;
+    padding: 5px;
+    border: none;
+    color: rgb(2, 155, 2);
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid rgb(2, 117, 2);
+}
+
+.add-btn:hover {
+    cursor: pointer;
+}
+
+.add-icon {
+    font-size: 1.1rem;
+}
+
+.del-btn {
+    margin: 0 20px;
+}
+
+.del-btn:hover {
+    cursor: pointer;
+}
+
+.del-icon {
+    border: none;
+    background: none;
+    color: #f00;
+    font-size: 1.2rem;
+}

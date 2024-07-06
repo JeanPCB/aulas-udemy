@@ -36,7 +36,11 @@ function main() {
 
     function addDelBtn(task) {
         const delTaskBtn = createEl("button");
-        delTaskBtn.innerText = "delete";
+        const delTaskIcon = createEl("i");
+        delTaskBtn.appendChild(delTaskIcon);
+        delTaskBtn.classList.add("fa-solid");
+        delTaskBtn.classList.add("fa-trash");
+        delTaskBtn.classList.add("del-icon");
         delTaskBtn.classList.add("del-btn");
         task.appendChild(delTaskBtn);
     }
