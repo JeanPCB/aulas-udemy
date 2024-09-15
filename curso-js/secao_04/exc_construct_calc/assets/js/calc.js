@@ -1,9 +1,4 @@
 function calcBuild() {
-    window.addEventListener("load", () => {
-        const displays = document.querySelectorAll("input");
-        displays.forEach((display) => display.innerText = "");
-    });
-
     function Calculator(table, display) {
         this.table = table;
         this.display = display;
@@ -14,11 +9,35 @@ function calcBuild() {
             if (el.classList.contains("num-btn")) {
                 this.displayBtnVal(el);
             };
+
+            if (el.classList.contains("del-btn")) {
+                this.delChar(this.display.value);
+            }
+
+            if (el.classList.contains("equal-btn")) {
+                this.calculate();
+            }
+
+            if (el.classList.contains("clear-btn")) {
+                this.clearDisplay();
+            }
         });
 
         this.displayBtnVal = (element) => {
             this.display.value += element.innerText;
         };
+
+        this.calculate = () => {
+            this.display.value = eval(this.display.value);
+        }
+
+        this.delChar = (str) => {
+            this.display.value = str.slice(0, -1);
+        }
+
+        this.clearDisplay = () => {
+            this.display.value = "";
+        }
     }
 
     const c1 = new Calculator(getCalcEl("table", 1), getCalcEl("display", 1));
